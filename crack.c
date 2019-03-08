@@ -24,33 +24,33 @@ int main(int argc, string argv[])
         printf("\n");
 
         //start first loop
-        int count = 0;
-        for (char a = 'a'; a <= 'z'; a++)
-        {
-            char pwdAr[] = {a ,'\0'};
-            string tHash = crypt(pwdAr, salt); //making temp hash from current char
-            printf("tHash is: %s\n", tHash);
-            for (int i = 2; i <= 12; i++) //comparing temp hash with given hash
-            {
-                if (tHash[i] == hash[i])
-                {
-                    count++;
-                    printf("mached char is: %c\n", tHash[i]);
-                }
+        // int count = 0;
+        // for (char a = 'a'; a <= 'z'; a++)
+        // {
+        //     char pwdAr[] = {a ,'\0'};
+        //     string tHash = crypt(pwdAr, salt); //making temp hash from current char
+        //     printf("tHash is: %s\n", tHash);
+        //     for (int i = 2; i <= 12; i++) //comparing temp hash with given hash
+        //     {
+        //         if (tHash[i] == hash[i])
+        //         {
+        //             count++;
+        //             printf("mached char is: %c\n", tHash[i]);
+        //         }
 
-            }
-            if(count == 11) //if all hash chars are the same
-            {
-                printf("It's a MATCH!, password is: %c\n", a);
-                break;
-            }
-            else
-            {
-                count = 0;
-                printf("no luck(\n");
-            }
+        //     }
+        //     if(count == 11) //if all hash chars are the same
+        //     {
+        //         printf("It's a MATCH!, password is: %c\n", a);
+        //         break;
+        //     }
+        //     else
+        //     {
+        //         count = 0;
+        //         printf("no luck(\n");
+        //     }
 
-        }
+        // }
 
     }
     else
