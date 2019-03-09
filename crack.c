@@ -4,6 +4,8 @@
 #include <cs50.h>
 #include <string.h>
 
+int cryptCheck (int argc, string argv[]); //declaration for check function
+
 int main(int argc, string argv[])
 {
     if (argc == 2)
@@ -25,14 +27,24 @@ int main(int argc, string argv[])
 
         //2 char generating loop
 
-        char twoChars[3];   //temp char array
+        char twoChars[3];   //temp char array //? need to make it string
         twoChars[2] = '\0'; //closing byte
+        int is_a_match = 0; // 0 false, 1 true
+
         for (char a = 'a'; a <= 'z'; a++)
         {
-            for(char b = 'a'; b <= 'z'; b++)
+            twoChars[0] = a;
+            is_a_match = cryptCheck(twoChars[0], salt);
+            if (is_a_match == 1)
             {
-
+                printf("It's a MATCH!, password is: %c\n", twoChars[0])
+                return 0;
             }
+
+            // for(char b = 'a'; b <= 'z'; b++)
+            // {
+
+            // }
         }
 
         //crypt check function
@@ -68,10 +80,16 @@ int main(int argc, string argv[])
 
         // }
 
+
     }
     else
     {
         printf("ERROR\n");
         return 1;
     }
+}
+
+int cryptCheck (int argc, string argv[])
+{
+
 }
