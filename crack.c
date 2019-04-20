@@ -91,5 +91,7 @@ int main(int argc, string argv[])
 
 int cryptCheck (int argc, string argv[])
 {
+    //usage: cryptCheck(char salt hash);
+    int result = crypt(argv[1], argv[2]);
 
 }
