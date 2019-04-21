@@ -8,44 +8,49 @@ int main(void)
 {
     char fourChars[5];
 
-    for (char a = 'a'; a <= 'z'; a++)
+    // open output file
+    FILE *f = fopen("output.txt", "w");
+
+    for (char a = 'a'; a <= 'c'; a++)
     {
         fourChars[0] = a;
-        printf("%s\n", fourChars);
+        fprintf (f, "%s\n", fourChars);
         fourChars[0] = toupper(a);
-        printf("%s\n", fourChars);
-        for (char inta = '0'; inta <= '9'; inta++)
+        fprintf (f, "%s\n", fourChars);
+        for (char inta = '0'; inta <= '3'; inta++)
         {
             fourChars[0] = inta;
-            printf("%s\n", fourChars);
+            fprintf (f, "%s\n", fourChars);
         }
-        for (char b = 'a'; b <= 'z'; b++)
+        fourChars[0] = a;
+        for (char b = 'a'; b <= 'c'; b++)
         {
             fourChars[1] = b;
-            printf("%s\n", fourChars);
+            fprintf (f, "%s\n", fourChars);
             fourChars[1] = toupper(b);
-            printf("%s\n", fourChars);
-            for (char intb = '0'; intb <= '9'; intb++)
+            fprintf (f, "%s\n", fourChars);
+            for (char intb = '0'; intb <= '3'; intb++)
             {
                 fourChars[1] = intb;
-                printf("%s\n", fourChars);
+                fprintf (f, "%s\n", fourChars);
             }
-                for (char c = 'a'; c <= 'z'; c++)
-                {
-                    fourChars[2] = c;
-                    printf("%s\n", fourChars);
-                    fourChars[2] = toupper(c);
-                    printf("%s\n", fourChars);
-                    for (char intc = '0'; intc <= '9'; intc++)
-                    {
-                        fourChars[2] = intc;
-                        printf("%s\n", fourChars);
-                    }
+                // for (char c = 'a'; c <= 'z'; c++)
+                // {
+                //     fourChars[2] = c;
+                //     fprintf (f, "%s\n", fourChars);
+                //     fourChars[2] = toupper(c);
+                //     fprintf (f, "%s\n", fourChars);
+                //     for (char intc = '0'; intc <= '9'; intc++)
+                //     {
+                //         fourChars[2] = intc;
+                //         fprintf (f, "%s\n", fourChars);
+                //     }
 
-                }
+                // }
 
         }
 
     }
+    fclose (f);
 
 }
