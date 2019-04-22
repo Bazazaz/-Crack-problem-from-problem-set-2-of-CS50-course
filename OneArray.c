@@ -6,11 +6,12 @@
 
 int main(void)
 {
-    // open output file
-    // FILE *f = fopen("output.txt", "w");
+    //open output file
+    FILE *f = fopen("output.txt", "w");
 
     //reference array
     char refArray[63];
+    int arrLength = 63;
 
     //array creation loop
     int counter = 0;
@@ -33,5 +34,15 @@ int main(void)
 
     //terminating part
     refArray[counter] = '\0';
+
+    //print to file part
+    fprintf(f,"%s\n", refArray);
+    fclose(f);
+
+    //print to console part
+    // for(int c = 0; c < arrLength; c++)
+    // {
+    //     printf("%c\n", refArray[c]);
+    // }
 
 }
