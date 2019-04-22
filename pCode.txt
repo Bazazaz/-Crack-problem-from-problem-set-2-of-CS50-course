@@ -1,5 +1,0 @@
-//one char version
-take hash
-extract salt
-call crypt with letters A-Z and a-z and check for match
-(loop through A-Z: )
