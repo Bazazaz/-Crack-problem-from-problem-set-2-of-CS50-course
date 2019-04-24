@@ -9,7 +9,7 @@ int main(void)
     //generate ref array start ---------------------------------------------
 
     // open output file
-    FILE *f = fopen("output.txt", "w");
+    FILE *ff = fopen("output.txt", "w");
 
     //reference array
     char refArray[63];
@@ -41,9 +41,25 @@ int main(void)
     // }
     //generate ref array end ---------------------------------------------
 
-    for(int d = 0; d < 63; d++)
+    char outArray[4] = "000";
+
+    outArray[3] = '\0';
+
+    for(int d = 0; d < 62; d++)
     {
-       fprintf(f;"%c\n", refArray[d]);
+        outArray[0] = refArray[d];
+        fprintf(ff,"%s\n", outArray);
+        for(int e = 0; e < 62; e++)
+        {
+            outArray[1] = refArray[e];
+            fprintf(ff,"%s\n", outArray);
+            for(int f = 0; f < 62; f++)
+            {
+                outArray[2] = refArray[f];
+                fprintf(ff, "%s\n", outArray);
+            }
+        }
     }
-    fclose(f);
+
+    fclose(ff);
 }
