@@ -33,6 +33,10 @@ int main(void)
 
     //terminating part
     refArray[counter] = '\0';
+    for(int cc = 0; cc < 63; cc++)
+    {
+        printf("%c\n", refArray[cc]);
+    }
 
 
 }
