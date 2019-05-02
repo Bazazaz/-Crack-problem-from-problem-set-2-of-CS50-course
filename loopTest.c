@@ -43,9 +43,9 @@ int main(void)
     // }
     //generate ref array end ---------------------------------------------
 
-    char outArray[4] = "000";
+    char outArray[5] = "0000";
 
-    outArray[3] = '\0';
+    outArray[4] = '\0';
 
     for(int d = 0; d < 62; d++)
     {
@@ -64,6 +64,12 @@ int main(void)
                 outArray[2] = refArray[f];
                 print(ff, outArray);
                 // fprintf(ff, "%s\n", outArray);
+
+                for(int g = 0; g < 62; g++)
+                {
+                    outArray[3] = refArray[g];
+                    print(ff, outArray);
+                }
             }
         }
     }
