@@ -19,3 +19,4 @@ int main(int argc, string argv[])
 }
 
 //./crypt f 50 ----> 50AWs/7oe6pkA
+//        hop 50 ----> 50mzyjm7DMk32
