@@ -34,55 +34,54 @@ int main(void)
         refArray[counter] = b;
         counter++;
     }
-
-    //terminating part
-    // refArray[counter] = '\0';
-    // for(int cc = 0; cc < 63; cc++)
-    // {
-    //     printf("%c\n", refArray[cc]);
-    // }
     //generate ref array end ---------------------------------------------
 
-    char outArray1[2] = "0";
-    outArray1[1] = '\0';
+    char tempArray1[2] = "0";
+    tempArray1[1] = '\0';
 
-    char outArray2[3] = "00";
-    outArray2[2] = '\0';
+    char tempArray2[3] = "00";
+    tempArray2[2] = '\0';
 
-    char outArray3[4] = "000";
-    outArray3[3] = '\0';
+    char tempArray3[4] = "000";
+    tempArray3[3] = '\0';
 
-    char outArray4[5] = "0000";
-    outArray4[4] = '\0';
+    char tempArray4[5] = "0000";
+    tempArray4[4] = '\0';
 
-    for(int d = 0; d < 62; d++)
+    char tempArray5[6] = "00000";
+    tempArray5[5] = '\0';
+
+    for(int d = 0; d < 52; d++)
     {
-        outArray1[0] = refArray[d];
-        print(ff, outArray1);
-        // fprintf(ff,"%s\n", outArray);
-
-        for(int e = 0; e < 62; e++)
+        tempArray1[0] = refArray[d];
+        // print(ff, tempArray1);
+        for(int e = 0; e < 52; e++)
         {
-            outArray2[0] = outArray1[0];
-            outArray2[1] = refArray[e];
-            print(ff, outArray2);
-            // fprintf(ff,"%s\n", outArray);
-
-            for(int f = 0; f < 62; f++)
+            tempArray2[0] = tempArray1[0];
+            tempArray2[1] = refArray[e];
+            // print(ff, tempArray2);
+            for(int f = 0; f < 52; f++)
             {
-                outArray3[0] = outArray1[0];
-                outArray3[1] = outArray2[1];
-                outArray3[2] = refArray[f];
-                print(ff, outArray3);
-                // fprintf(ff, "%s\n", outArray);
-
-                for(int g = 0; g < 62; g++)
+                tempArray3[0] = tempArray1[0];
+                tempArray3[1] = tempArray2[1];
+                tempArray3[2] = refArray[f];
+                // print(ff, tempArray3);
+                for(int g = 0; g < 52; g++)
                 {
-                    outArray4[0] = outArray1[0];
-                    outArray4[1] = outArray2[1];
-                    outArray4[2] = outArray3[2];
-                    outArray4[3] = refArray[g];
-                    print(ff, outArray4);
+                    tempArray4[0] = tempArray1[0];
+                    tempArray4[1] = tempArray2[1];
+                    tempArray4[2] = tempArray3[2];
+                    tempArray4[3] = refArray[g];
+                    // print(ff, tempArray4);
+                    for(int h = 0; h < 52; h++)
+                    {
+                        tempArray5[0] = tempArray1[0];
+                        tempArray5[1] = tempArray2[1];
+                        tempArray5[2] = tempArray3[2];
+                        tempArray5[3] = tempArray4[3];
+                        tempArray5[4] = refArray[h];
+                        print(ff, tempArray5);
+                    }
                 }
             }
         }
