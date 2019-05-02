@@ -4,6 +4,8 @@
 #include <string.h>
 #include <ctype.h>
 
+int print(FILE *filename, char *arrayname);
+
 int main(void)
 {
     //generate ref array start ---------------------------------------------
@@ -48,18 +50,30 @@ int main(void)
     for(int d = 0; d < 62; d++)
     {
         outArray[0] = refArray[d];
-        fprintf(ff,"%s\n", outArray);
+        print(ff, outArray);
+        // fprintf(ff,"%s\n", outArray);
+
         for(int e = 0; e < 62; e++)
         {
             outArray[1] = refArray[e];
-            fprintf(ff,"%s\n", outArray);
+            print(ff, outArray);
+            // fprintf(ff,"%s\n", outArray);
+
             for(int f = 0; f < 62; f++)
             {
                 outArray[2] = refArray[f];
-                fprintf(ff, "%s\n", outArray);
+                print(ff, outArray);
+                // fprintf(ff, "%s\n", outArray);
             }
         }
     }
 
     fclose(ff);
+}
+
+//print(ff autArray)
+int print(FILE *filename, char *arrayname)
+{
+    fprintf(filename, "%s\n", arrayname);
+    return 0;
 }
