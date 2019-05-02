@@ -43,32 +43,46 @@ int main(void)
     // }
     //generate ref array end ---------------------------------------------
 
-    char outArray[5] = "0000";
+    char outArray1[2] = "0";
+    outArray1[1] = '\0';
 
-    outArray[4] = '\0';
+    char outArray2[3] = "00";
+    outArray2[2] = '\0';
+
+    char outArray3[4] = "000";
+    outArray3[3] = '\0';
+
+    char outArray4[5] = "0000";
+    outArray4[4] = '\0';
 
     for(int d = 0; d < 62; d++)
     {
-        outArray[0] = refArray[d];
-        print(ff, outArray);
+        outArray1[0] = refArray[d];
+        print(ff, outArray1);
         // fprintf(ff,"%s\n", outArray);
 
         for(int e = 0; e < 62; e++)
         {
-            outArray[1] = refArray[e];
-            print(ff, outArray);
+            outArray2[0] = outArray1[0];
+            outArray2[1] = refArray[e];
+            print(ff, outArray2);
             // fprintf(ff,"%s\n", outArray);
 
             for(int f = 0; f < 62; f++)
             {
-                outArray[2] = refArray[f];
-                print(ff, outArray);
+                outArray3[0] = outArray1[0];
+                outArray3[1] = outArray2[1];
+                outArray3[2] = refArray[f];
+                print(ff, outArray3);
                 // fprintf(ff, "%s\n", outArray);
 
                 for(int g = 0; g < 62; g++)
                 {
-                    outArray[3] = refArray[g];
-                    print(ff, outArray);
+                    outArray4[0] = outArray1[0];
+                    outArray4[1] = outArray2[1];
+                    outArray4[2] = outArray3[2];
+                    outArray4[3] = refArray[g];
+                    print(ff, outArray4);
                 }
             }
         }

@@ -4,6 +4,8 @@
 #include <cs50.h>
 #include <string.h>
 
+int checkForMatch()
+
 int main(int argc, string argv[])
 {
     if (argc == 2)
@@ -23,34 +25,26 @@ int main(int argc, string argv[])
         printf("salt is: %s\n", salt);
         printf("\n");
 
-        //start first loop
-        int count = 0;
-        for (char a = 'a'; a <= 'z'; a++)
+        //generate ref array -------------------------------------------------
+        char refArray[63];
+        int counter = 0;
+
+        //chars part
+        for(char a = 'a'; a <= 'z'; a++)
         {
-            char pwdAr[] = {a ,'\0'};
-            string tHash = crypt(pwdAr, salt); //making temp hash from current char
-            printf("tHash is: %s\n", tHash);
-            for (int i = 2; i <= 12; i++) //comparing temp hash with given hash
-            {
-                if (tHash[i] == hash[i])
-                {
-                    count++;
-                    //printf("mached char is: %c\n", tHash[i]);
-                }
-
-            }
-            if(count == 11) //if all hash chars are the same
-            {
-                printf("It's a MATCH!, password is: %c\n", a);
-                break;
-            }
-            else
-            {
-                count = 0;
-                printf("no luck(\n");
-            }
-
+            refArray[counter] = a;
+            counter++;
+            refArray[counter] = toupper(a);
+            counter++;
         }
+
+        //integers part
+        for(char b = '0'; b <= '9'; b++)
+        {
+            refArray[counter] = b;
+            counter++;
+        }
+        //----------------------------------------------------------------------
 
     }
     else
